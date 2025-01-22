@@ -7061,6 +7061,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lwk-rn@npm:^0.8.2":
+  version: 0.8.2
+  resolution: "lwk-rn@npm:0.8.2"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 89461a0ebb5f4580fa9e91540525f0defaa48a5e1ec5c14595891f8e836da7fb4b5558cf708eb909c45efaf6ec6aa6dffa7eeed515c51eea32bd9671b95a4a2b
+  languageName: node
+  linkType: hard
+
 "make-dir@npm:^2.0.0, make-dir@npm:^2.1.0":
   version: 2.1.0
   resolution: "make-dir@npm:2.1.0"
@@ -8969,6 +8979,7 @@ __metadata:
     babel-plugin-module-resolver: ^5.0.2
     eslint: ^8.19.0
     jest: ^29.6.3
+    lwk-rn: ^0.8.2
     prettier: 2.8.8
     react: 18.3.1
     react-native: 0.75.2
