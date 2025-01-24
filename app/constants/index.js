@@ -8,6 +8,7 @@ const CENTER_ELEMENT = {
   marginRight: 'auto',
   marginLeft: 'auto',
 };
+const ACCOUNT_MNEMOINC_KEY = 'WALLET_MNEMOINC';
 import ICONS from './icons';
 
 const BACK_ARROW = {
@@ -25,4 +26,5 @@ export {
   ICONS,
   BACK_ARROW,
   ALTERNATE_TEXT,
+  ACCOUNT_MNEMOINC_KEY,
 };
