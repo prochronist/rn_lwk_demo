@@ -11,9 +11,10 @@ import ConfirmTxPage from './app/screens/confirmTxPage';
 import {MyTabs} from './app/navigation/tabs';
 import LoadingScreen from './app/screens/loadingScreen';
 import {useEffect, useState} from 'react';
-import {getSecureStore} from './app/functions/secureStore';
+import {getSecureStore, removeSecureSore} from './app/functions/secureStore';
 import {ACCOUNT_MNEMOINC_KEY} from './app/constants';
 import {WalletProvider} from './app/contexts/wallet';
+import ViewMnemonic from './app/screens/mnemonicView';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,19 +30,28 @@ export default function App() {
   return (
     <WalletProvider>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          initialRouteName={hasAccount ? 'MyTabs' : 'LoadingScreen'}
+          screenOptions={{
+            headerShown: false,
+          }}>
           {/* Tab Navigator */}
-          <Stack.Screen
-            name="MyTabs"
-            component={hasAccount ? MyTabs : LoadingScreen}
-            options={{headerShown: false}}
-          />
+          <Stack.Screen name="MyTabs" component={MyTabs} />
+          <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
 
           {/* Additional Screens */}
           <Stack.Screen
             name="confirmTxPage"
             component={ConfirmTxPage}
-            options={{headerShown: false, animation: 'slide_from_bottom'}}
+            options={{animation: 'slide_from_bottom'}}
+          />
+          <Stack.Screen
+            name="ViewMnemonic"
+            component={ViewMnemonic}
+            options={{
+              animation: 'fade',
+              presentation: 'transparentModal',
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>

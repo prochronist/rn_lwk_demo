@@ -1,4 +1,10 @@
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import {
   BACKGROUND_COLOR,
   CENTER_ELEMENT,
@@ -6,9 +12,13 @@ import {
   WINDOW_WIDTH,
 } from '../constants';
 
-export default function CustomView({children, customStyles}) {
+export default function CustomView({
+  children,
+  customStyles,
+  customOuterStyles,
+}) {
   return (
-    <View style={styles.globalContainer}>
+    <View style={{...styles.globalContainer, ...customOuterStyles}}>
       <SafeAreaView style={{...styles.innerContainer, ...customStyles}}>
         {children}
       </SafeAreaView>

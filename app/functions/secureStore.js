@@ -19,3 +19,12 @@ export function getSecureStore({key}) {
     return false;
   }
 }
+export async function removeSecureSore({key}) {
+  try {
+    const value = await SecureStore.deleteItemAsync(key);
+    return true;
+  } catch (err) {
+    console.log('Secure store error', err);
+    return false;
+  }
+}
