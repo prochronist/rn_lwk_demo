@@ -26,6 +26,7 @@ export default function App() {
   }, []);
 
   if (hasAccount === null) return;
+  console.log('hey')
 
   return (
     <WalletProvider>
